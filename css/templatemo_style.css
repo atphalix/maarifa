@@ -240,7 +240,7 @@ em { color: #fff; }
 
 #gallery_container li {
 	float: left;
-	width: 190px;
+	width: 160px;
 	height: 160px;
 	display: block; 
 	padding: 0;
@@ -254,7 +254,7 @@ em { color: #fff; }
 }
 
 #gallery_container li img { 
-	width: 170px; 
+	width: 100px; 
 	height: 100px; 
 	padding: 9px; 
 	border: 1px solid #2f2824; 
