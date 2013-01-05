@@ -17,16 +17,27 @@
 <script language="JavaScript" src="http://clic.xtec.cat/dist/jclic/launchApplet.js" type="text/javascript"></script>
 
 <script type="text/javascript">
+function launchVideo(url){
+    launchAppletWH(url, 788, 540);
+}
 
-  var _gaq = _gaq || [];
-  _gaq.push(['_setAccount', 'UA-36717309-1']);
-  _gaq.push(['_trackPageview']);
-
-  (function() {
-    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-  })();
+function launchAppletWH(url, popW, popH){
+    var w = 800, h = 600, x0=0, y0=0;
+    if (document.all || document.layers) {
+      w = screen.availWidth;
+      h = screen.availHeight;
+    }
+    if(popW>(w-12))
+      popW=w-12;
+    if(popH>(h-28))
+      popH=h-28;
+    var leftPos = 0, topPos = 0;
+    if(w>800 && h>600){
+      leftPos = (w-popW)/2;
+      topPos = (h-popH)/2;
+    }
+    window.open(url,'VideoWindow','scrollbars=no,resizable=yes,width=' + popW + ',height=' + popH + ',top=' + topPos + ',left=' + leftPos+ ',screenY=' + topPos + ',screenX=' + leftPos);
+}
 
 </script>
 </head>
@@ -57,27 +68,36 @@
                                 <li> لا حاجة لتحميل وتثبيت برامج جديدة</li>
                                 <li>    استفادة كل مستخدم من أي تحديث أو إضافة لمادة معينة على الموقع الالكتروني.</li> 
                                 <li> جميع المحتوى مجاني ومعرب في مشروع غير ربحي</li>   
-                            </ul>
-
+                            </ul><br>
+			    
+لتشغيل البرامج يجب التأكد من تثبيت برنامج جافا على جهازك، <a href="http://www.java.com" target="_blank">يمكنك تحميله مجانا من الموقع الرسمي</a><br>
+  <img src="images/templatemo_image_01.jpg" alt="Image" class="image_wrapper image_fr" width=70% height=50% />
                     </div>
                     <!-- end of home -->
                     
                     <div class="panel" id="aboutus">
-                        <h2>حول استخدام برامج الموقع </h2>
-                        
-                  
-                         
-                        	<blockquote>
-                          	<p align=right>نضع بين أيدي أبنائنا الطلاب وأولياء أمورهم مجموعة من المواقع المهمة ومن إبداعات المتخصصين في التربية والتعليم حتى نساهم في رفع كفاءتهم وقدراتهم التحصيلية واستيعابهم للمادة العلمية. وعملا على نشر العلم والوعي في المجتمع وتكملة لدور من سهروا وبذلوا قصارى جهدهم في إنتاج هذه المواد العلمية لتصل بيسر دون ثمن ليد كل من يحتاج لها.
-<br>
-لتشغيل البرامج يجب التأكد من تثبيت برنامج جافا على جهازك، <a href="http://www.java.com" target="_blank">يمكنك تحميله مجانا من الموقع الرسمي</a><br>
+                        <h2>دروس رياضيات معربة </h2>
+ <ul id="gallery_container">
+                            <li><a href="javascript:launchVideo('videos/addition-substract.html')"><img src="videos/addition-substract.png" alt="Image 01" /></a><br>
+			  جمع-طرح الأعداد السالبة</li>
+                            <li><a href="javascript:launchVideo('videos/addition2.html')"><img src="videos/addition2.png" alt="Image 02" /></a><br>
+			 الجمع</li>
+                            <li class="rmb"><a href="javascript:launchVideo('videos/mental-substract.html')"><img src="videos/mental-substract.png" alt="Image 03" /></a><br>
+			  طريقة الطرح العقلي</li>
+                            <li><a href="javascript:launchVideo('videos/multiply6.html')"><img src="videos/multiply6.png" alt="Image 04" /></a><br>
+			الضرب: الأعداد من أكثر من رقم </li>
+                            <li><a href="javascript:launchVideo('videos/division1.html')"><img src="videos/division1.png" alt="Image 05" /></a><br>
+			    طريقة القسمة</li>
+                            <li class="rmb"><a href="javascript:launchVideo('videos/mulip-table.html')"><img src="videos/mulip-table.png" alt="Image 06" /></a><br>
 
-</p>
+		جدول الضرب</li>
+                        </ul>                        
+                 
 
     
    
                         	
-                         <img src="images/templatemo_image_01.jpg" alt="Image" class="image_wrapper image_fr" width=70% height=50% />
+ 
                     </div> <!-- end of about us -->
                     
                     <div class="panel" id="services">
@@ -152,7 +172,7 @@
         	<div id="menu">
                 <ul class="navigation">
                 	<li><a href="#home" class="selected">مرحبا بكم</a></li>
-                    <li><a href="#aboutus">حول الموقع</a></li>
+                    <li><a href="#aboutus">دروس فيديو</a></li>
                     <li><a href="#services">علماء مسلمون </a></li>
                     <li><a href="#portfolio">اللغة العربية</a></li>
                     <li><a href="#contactus">الرياضيات</a></li>
